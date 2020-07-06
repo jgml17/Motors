@@ -1,0 +1,287 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ApiMotorsAdService - Catalog API",
+    "description": "ApiMotorsAdService Microservice API.",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Ads/{id}": {
+      "delete": {
+        "tags": [
+          "Ads"
+        ],
+        "summary": "Remover Anuncio por id: api/Ads/5",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id do anuncio",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "id do anuncio",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ad"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Ads"
+        ],
+        "summary": "Consultar Anuncio por id: api/Ads/5",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id do anuncio",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "id do anuncio",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ad"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Ads"
+        ],
+        "summary": "Atualizar Anuncio: api/Ads/5",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id do anuncio",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "id do anuncio",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Anuncio (MotorsAdModel)",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ad"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ad"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ad"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ads": {
+      "get": {
+        "tags": [
+          "Ads"
+        ],
+        "summary": "Consultar Anuncios: api/Ads",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ad"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ad"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ad"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Ads"
+        ],
+        "summary": "Incluir Anuncio: api/Ads",
+        "requestBody": {
+          "description": "Anuncio (MotorsAdModel)",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ad"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ad"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ad"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ad"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Ad": {
+        "required": [
+          "ano",
+          "marca",
+          "modelo",
+          "observacao",
+          "quilometragem",
+          "versao"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "marca": {
+            "maxLength": 45,
+            "minLength": 0,
+            "type": "string"
+          },
+          "modelo": {
+            "maxLength": 45,
+            "minLength": 0,
+            "type": "string"
+          },
+          "versao": {
+            "maxLength": 45,
+            "minLength": 0,
+            "type": "string"
+          },
+          "ano": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quilometragem": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "observacao": {
+            "maxLength": -1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Please enter JWT with Bearer into field. Ex: Bearer + space + Token",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

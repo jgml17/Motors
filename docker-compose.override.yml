@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+
+  database:
+    ports:
+      - "5502:3306"
+
+  apimotorsadservice:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5500:80"
+
+  motorsweb:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5501:80"
+

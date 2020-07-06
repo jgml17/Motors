@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiMotorsAdService</name>
+    </assembly>
+    <members>
+        <member name="T:ApiMotorsAdService.Controllers.AdsController">
+            <summary>
+            Controller de Anúncios (Ads)
+            </summary>
+        </member>
+        <member name="M:ApiMotorsAdService.Controllers.AdsController.#ctor(ApiMotorsAdService.Data.ServiceDbContext,Microsoft.ApplicationInsights.TelemetryClient,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.Double})">
+            <summary>
+            Construtor
+            </summary>
+            <param name="context">Database context</param>
+            <param name="telemetry">Telemetria ApplicationInsights</param>
+            <param name="tProperties">Propriedades da telemetria</param>
+            <param name="tMetrics">Metricas da telemetria</param>
+        </member>
+        <member name="M:ApiMotorsAdService.Controllers.AdsController.DeleteAd(System.Int32)">
+            <summary>
+            Remover Anuncio por id: api/Ads/5
+            </summary>
+            <param name="id">id do anuncio</param>
+            <returns>Anuncio (MotorsAdModel)</returns>
+        </member>
+        <member name="M:ApiMotorsAdService.Controllers.AdsController.GetAd(System.Int32)">
+            <summary>
+            Consultar Anuncio por id: api/Ads/5
+            </summary>
+            <param name="id">id do anuncio</param>
+            <returns>Anuncio (MotorsAdModel)</returns>
+        </member>
+        <member name="M:ApiMotorsAdService.Controllers.AdsController.Gettb_AnuncioWebmotors">
+            <summary>
+            Consultar Anuncios: api/Ads
+            </summary>
+            <returns>Anuncios list(MotorsAdModel)</returns>
+        </member>
+        <member name="M:ApiMotorsAdService.Controllers.AdsController.PostAd(MotorsAdModel.Ad)">
+            <summary>
+            Incluir Anuncio: api/Ads
+            </summary>
+            <param name="ad">Anuncio (MotorsAdModel)</param>
+            <returns>Anuncio (MotorsAdModel)</returns>
+        </member>
+        <member name="M:ApiMotorsAdService.Controllers.AdsController.PutAd(System.Int32,MotorsAdModel.Ad)">
+            <summary>
+            Atualizar Anuncio: api/Ads/5
+            </summary>
+            <param name="id">id do anuncio</param>
+            <param name="ad">Anuncio (MotorsAdModel)</param>
+            <returns>Anuncio (MotorsAdModel)</returns>
+        </member>
+        <member name="T:ApiMotorsAdService.Data.BloggingContextFactory">
+            <summary>
+            Class For Migrations to work
+            </summary>
+        </member>
+        <member name="T:ApiMotorsAdService.Resources.ApiResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ApiMotorsAdService.Resources.ApiResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ApiMotorsAdService.Resources.ApiResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ApiMotorsAdService.Resources.ApiResources.ApiVersion">
+            <summary>
+              Looks up a localized string similar to v1.
+            </summary>
+        </member>
+        <member name="P:ApiMotorsAdService.Resources.ApiResources.AppName">
+            <summary>
+              Looks up a localized string similar to ApiMotorsAdService.
+            </summary>
+        </member>
+        <member name="T:ApiMotorsAdService.CustomExtensionMethods">
+            <summary>
+            Custom Extension Methods Class
+            </summary>
+        </member>
+        <member name="T:ApiMotorsAdService.AuthorizationHeaderParameterOperationFilter">
+            <summary>
+            Swagger Authorization
+            </summary>
+        </member>
+        <member name="M:ApiMotorsAdService.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,ApiMotorsAdService.Data.ServiceDbContext)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">IApplicationBuilder</param>
+            <param name="env">IWebHostEnvironment</param>
+            <param name="dbContext">ServiceDbContext</param>
+        </member>
+        <member name="M:ApiMotorsAdService.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">IServiceCollection</param>
+        </member>
+    </members>
+</doc>

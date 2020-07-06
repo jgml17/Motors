@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+
+  database:
+    image: mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: 123456
+        MYSQL_DATABASE: teste_webmotors
+        MYSQL_USER: webmotors
+        MYSQL_PASSWORD: 123
+    restart: always
+    volumes:
+        - dbdata:/var/lib/mysql
+
+  apimotorsadservice:
+    depends_on:
+      - database
+    image: ${DOCKER_REGISTRY-}apimotorsadservice
+    build:
+      context: .
+      dockerfile: ApiMotorsAdService/Dockerfile
+
+  motorsweb:
+    image: ${DOCKER_REGISTRY-}motorsweb
+    build:
+      context: .
+      dockerfile: MotorsWeb/Dockerfile
+
+volumes:
+    dbdata:
